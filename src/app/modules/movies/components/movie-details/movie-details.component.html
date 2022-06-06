@@ -1,0 +1,47 @@
+<div *ngIf="movieDetails" class="movie-details">
+
+  <div class="details--picAndRate">
+    <img [src]="'https://image.tmdb.org/t/p/w300/'+movieDetails.poster_path" alt="{{movieDetails.title}} picture">
+      <app-stars [rating]="movieDetails.vote_average"></app-stars>
+  </div>
+
+  <div class="details--info">
+    <span>Title: {{movieDetails.title}}</span>
+    <span>Tagline: {{movieDetails.tagline ? movieDetails.tagline : '...'}}</span>
+    <span>Overview: {{movieDetails.overview}}</span>
+
+    <span>Genres:
+    <span *ngFor="let genre of movieDetails.genres;let i = index">
+      <span *ngIf="i===movieDetails.genres.length-1;else elseBlock">{{genre.name}}. </span>
+      <ng-template #elseBlock>{{genre.name}}, </ng-template>
+    </span>
+  </span>
+
+    <span>Original language: {{movieDetails.original_language}}.</span>
+
+    <span>Spoken languages:
+    <span *ngFor="let language of movieDetails.spoken_languages;let i=index">
+      <span *ngIf="i===movieDetails.spoken_languages.length-1;else elseBlock">{{language.name}}.</span>
+      <ng-template #elseBlock>{{language.name}}, </ng-template>
+  </span>
+  </span>
+
+    <span>Companies:
+      <span *ngFor="let company of movieDetails.production_companies;let i=index">
+      <span *ngIf="i===movieDetails.production_companies.length-1; else elseBlock">{{company.name}}.</span>
+      <ng-template #elseBlock>{{company.name}}, </ng-template>
+      </span>
+    </span>
+
+    <span>Countries:
+      <span *ngFor="let country of movieDetails.production_countries;let i = index">
+        <span *ngIf="i===movieDetails.production_countries.length-1">{{country.name}}.</span>
+        <ng-template>{{country.name}}, </ng-template>
+      </span>
+    </span>
+
+    <span>Runtime: {{movieDetails.runtime}}min.</span>
+    <span>Release date: {{movieDetails.release_date}}</span>
+  </div>
+
+</div>

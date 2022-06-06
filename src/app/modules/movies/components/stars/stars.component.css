@@ -1,0 +1,14 @@
+.stars{
+  color: gold;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+

@@ -1,0 +1,20 @@
+.details--info{
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  width: 65%;
+}
+
+.details--info>span{
+  margin: 10px 20px;
+}
+
+.movie-details{
+  display: flex;
+}
+.details--picAndRate{
+  margin-left: 50px;
+}
+.details--picAndRate>img{
+  height: 400px;
+}

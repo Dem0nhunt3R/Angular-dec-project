@@ -1,0 +1,10 @@
+<div *ngIf="movie">
+  <a [routerLink]="[movie.id]" [state]="movie" class="movieLink">
+    <div class="movieCard">
+      <img [src]="'https://image.tmdb.org/t/p/w300/'+movie.backdrop_path" [alt]="[movie.title]+' poster'">
+      <p class="movie-rating">{{movie.vote_average === 0 ? 'upcoming' : 'rating: ' + movie.vote_average}}</p>
+      <p class="movie-title">{{movie.title}}</p>
+    </div>
+  </a>
+</div>
+

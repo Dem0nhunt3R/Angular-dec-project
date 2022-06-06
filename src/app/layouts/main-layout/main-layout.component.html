@@ -1,0 +1,19 @@
+<div class="page">
+  <div class="navigation-menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="content">
+    <app-header></app-header>
+    <form [formGroup]="form"><label>Genres: </label>
+      <select formControlName="chosenGenre">
+        <option [ngValue]="null" disabled>--choose genre--</option>
+        <option *ngFor="let genre of genres" [ngValue]="genre">{{genre.name}}</option>
+      </select>
+    </form>
+    <button (click)="toggle()">switch</button>
+    <hr>
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-right-side-bar></app-right-side-bar>
+</div>

@@ -1,0 +1,8 @@
+.header{
+  display: flex;
+  width: 700px;
+  margin: 30px auto;
+}
+.header>a{
+  margin-left: 20px;
+}
